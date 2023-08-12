@@ -1,11 +1,22 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 dialog {
+  width: 30vw;
   padding: 1em;
+  border: 1px solid gray;
   border-radius: 1em;
 }
 
 form {
   margin: 0 auto;
-  width: auto;
 }
 
 ul {
@@ -22,5 +33,32 @@ label {
   display: inline-block;
   width: 50px;
   text-align: right;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+section {
+  margin: 1em 0;
+}
+
+section h1,
+section h3,
+section p {
+  margin: 0;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
