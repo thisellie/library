@@ -1,11 +1,4 @@
-let library = [
-  {
-    title: 'Pride and Prejudice',
-    author: 'Jane Austen',
-    pages: 324,
-    read: true,
-  },
-]
+let library = []
 
 class Book {
   constructor(_title, _author, _pages, _read) {
@@ -52,15 +45,6 @@ function createCard(_title, _author, _pages, _read) {
   container.append(card)
 }
 
-for (let i = 0; i < library.length; i++) {
-  createCard(
-    library[i].title,
-    library[i].author,
-    library[i].pages,
-    library[i].read
-  )
-}
-
 const addButton = document.getElementById('addButton')
 const form = document.getElementById('bookForm')
 
@@ -83,6 +67,7 @@ addButton.addEventListener('click', event => {
   createCard(title, author, pages, read)
 
   form.reset()
+  bookDialog.close()
 })
 
 container.addEventListener('click', event => {
@@ -101,7 +86,6 @@ container.addEventListener('click', event => {
     } else {
       element.nextSibling.textContent = 'Already read'
       library[index].read = !library[index].read
-      console.log(library[index].read)
     }
   }
 })
